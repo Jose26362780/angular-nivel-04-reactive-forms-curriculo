@@ -16,7 +16,7 @@
 
   // workbench
   "workbench.editor.enablePreview": false,
-  "workbench.iconTheme": "symbols-enhance",
+  "workbench.iconTheme": "helium-icon-theme",
   "workbench.colorTheme": "Omni",
 
   "workbench.editor.labelFormat": "short",
