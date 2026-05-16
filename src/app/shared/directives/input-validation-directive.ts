@@ -27,18 +27,13 @@ export class InputValidationDirective {
   @Input() errorMessage = 'Campo Invalido';
 
   ngOnInit() {
-    console.log('OnInit errorMessage: ', this.errorMessage);
-
     this._ngControl.statusChanges?.pipe(takeUntilDestroyed(this._destroyRef)).subscribe(() => {
-      console.log('Status Mudou!');
-
       this.updateStatus();
     });
   }
 
   @HostListener('blur')
   onBlur() {
-    console.log('Ocorreu um blur');
     this.updateStatus();
   }
 
@@ -50,13 +45,9 @@ export class InputValidationDirective {
     const isInvalid = control.invalid && control.touched;
 
     if (isInvalid) {
-      console.log('Esta invalido');
-
       this.setInvalidStyles();
       this.showError();
     } else {
-      console.log('Esta valido');
-
       this.setValidStyles();
       this.hideError();
     }
