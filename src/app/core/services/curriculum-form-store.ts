@@ -9,7 +9,7 @@ export class CurriculumFormStore {
     personal: new FormGroup({
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
-      age: new FormControl('', [Validators.required]),
+      age: new FormControl('', [Validators.required, Validators.min(18)]),
       address: new FormControl('', [Validators.required]),
       state: new FormControl('', [Validators.required]),
       city: new FormControl('', [Validators.required]),
