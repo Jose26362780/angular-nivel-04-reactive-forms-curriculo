@@ -1,5 +1,5 @@
 [build]
-  command = "npm ci && npm run build"
+  command = "npm ci --include=dev && npm run build"
   publish = "dist/cadastro-curriculo-teste/browser"
   environment = { NODE_VERSION = "20", NODE_ENV = "production" }
 
