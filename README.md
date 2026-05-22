@@ -233,44 +233,6 @@ getCities(state: string): Observable<CitiesListResponse> {
 }
 ```
 
-## 🎯 Conceitos Aprendidos
-
-### 1. Reactive Forms
-
-- Criação de formulários complexos com `FormGroup` e `FormArray`
-- Validações built-in e customizadas
-- Acesso programático aos valores do formulário
-- Estado reativo do formulário
-
-### 2. Signals (Nova Geração Reativa)
-
-- `signal()`: Variáveis reativas
-- `computed()`: Valores derivados reativamente
-- `effect()`: Efeitos colaterais reativos
-- `toSignal()`: Conversão de Observables para Signals
-- `rxResource()`: Gerenciamento de requisições com loading/erro
-
-### 3. RxJS Integration
-
-- `takeUntilDestroyed`: Gerenciamento automático de inscrições
-- `tap`: Efeitos colaterais em streams
-- `map`: Transformação de dados
-- `pipe`: Composição de operadores
-
-### 4. Validação Dinâmica
-
-- Validadores built-in (required, email, min, pattern)
-- Validadores customizados
-- Feedback visual em tempo real
-- Exibição de mensagens de erro
-
-### 5. API Integration
-
-- HttpClient para requisições HTTP
-- Tipagem forte com interfaces TypeScript
-- Tratamento de respostas assíncronas
-- Carregamento condicional de dados
-
 ---
 
 ## 📡 Gerenciamento de Estado com Signals
@@ -331,6 +293,61 @@ Engenheiro de Software com foco em desenvolvimento front-end rumo ao full stack.
 
 ---
 
+## 🌐 Deploy no Netlify
+
+Este projeto está totalmente configurado para deploy automático no Netlify!
+
+### Arquivos de Configuração
+
+- **netlify.toml**: Configuração de build, redirects e headers de segurança
+- **public/\_redirects**: Redireciona todas as rotas para index.html (SPA routing)
+
+### Deploy Automático
+
+1. **Conecte o repositório** ao Netlify via GitHub
+2. Netlify detectará automaticamente o arquivo `netlify.toml`
+3. **Cada push** para a branch principal gerará um novo deploy
+
+### Deploy Manual
+
+```bash
+# 1. Instale a CLI do Netlify (opcional)
+npm install -g netlify-cli
+
+# 2. Teste o build localmente
+npm run build
+
+# 3. Faça deploy via CLI
+netlify deploy --prod --dir=dist/cadastro-curriculo-teste/browser
+```
+
+### Configurações de Produção
+
+✅ **Node.js**: 20.x  
+✅ **Comando de build**: `npm ci && npm run build`  
+✅ **Diretório de publicação**: `dist/cadastro-curriculo-teste/browser`  
+✅ **SPA Routing**: Configurado automaticamente  
+✅ **Headers de Segurança**: Content Security Policy, X-Frame-Options, etc.  
+✅ **Cache de Assets**: Imutável por 1 ano
+
+### Possíveis Problemas e Soluções
+
+| Problema                    | Solução                                  |
+| --------------------------- | ---------------------------------------- |
+| 404 ao atualizar página     | `_redirects` está em `public/`           |
+| Build falha no Netlify      | Verifique versão do Node (20.x)          |
+| API de Estados não funciona | CORS está permitido pela CountriesNow    |
+| Assets não carregam         | `<base href="/" />` está no `index.html` |
+
+### Próximos Passos
+
+1. Crie uma conta em [netlify.com](https://netlify.com)
+2. Conecte seu repositório GitHub
+3. Deixe o Netlify fazer o deploy automático
+4. Configure um domínio customizado (opcional)
+
+---
+
 ## 📚 Referências
 
 - [Angular Documentation](https://angular.io/docs)
@@ -339,6 +356,7 @@ Engenheiro de Software com foco em desenvolvimento front-end rumo ao full stack.
 - [RxJS Documentation](https://rxjs.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [CountriesNow API](https://countriesnow.space/)
+- [Netlify Documentation](https://docs.netlify.com/)
 
 ---
 
