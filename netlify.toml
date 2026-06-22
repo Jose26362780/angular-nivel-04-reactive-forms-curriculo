@@ -9,7 +9,7 @@
 # Redirect rules for SPA routing
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  to = "/index.html"  command = "npm ci --include=dev && npm run build"
   status = 200
 
 # Security headers
